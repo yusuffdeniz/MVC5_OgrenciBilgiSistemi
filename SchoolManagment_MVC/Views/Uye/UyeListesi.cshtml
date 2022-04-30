@@ -1,0 +1,66 @@
+﻿@using Gym_MVC.Models
+
+@model List <Member>
+
+@{
+    ViewBag.Title = "Uye Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Uye Listesi</h2>
+<a href="/Uye/AddMember" class="btn btn-primary">Yeni Üye Kayıt</a>
+<a href="/Uye/Düzenle" class="btn btn-warning">Üye Düzenle</a>
+<a href="/Uye/Sil" class="btn btn-danger">Üye Sil</a>
+<table class="table table-bordered table-hover">
+    <thead >
+        <tr>
+            <th scope="col">Adı</th>
+            <th scope="col">Soyadı</th>
+            <th scope="col">TC Kimlik NO</th>
+            <th scope="col">Doğum Tarihi</th>
+            <th scope="col">Cinsiyet</th>
+            <th scope="col">E Posta</th>
+            <th scope="col">Plan Türü</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var uye in Model)
+        {
+        <tr>
+            <td>
+                @uye.memberName
+            </td>
+            <td>
+                @uye.memberSurname
+            </td>
+            <td>
+                @uye.memberTC
+            </td>
+            <td>
+                @uye.memberBirthDate.ToShortDateString()
+            </td>
+            <td>
+            @{ 
+                string cinsiyet;
+                if (uye.memberSex == "0")
+                {
+                    cinsiyet = "Kadın";
+
+                }
+                else
+                { cinsiyet = "Erkek"; }
+
+            }
+                @cinsiyet
+            </td>
+            <td>
+                @uye.membereMail
+            </td>
+            <td>
+                @uye.membershipPlan.planName
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

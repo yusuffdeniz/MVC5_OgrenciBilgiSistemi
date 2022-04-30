@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Üye Ekle</h2>
+<form class="form-group">
+
+    <div>
+        <label>Öğrenci Ad</label>
+        <input type="text" name="memberName" class="form-control" />
+    </div>
+    <div>
+        <label>Öğrenci Soyadı</label>
+        <input type="text" name="memberSurname" class="form-control" />
+    </div>
+    <div>
+        <label>Tc Kimlik No</label>
+        <input type="number" name="memberSurname" class="form-control" />
+    </div>
+    <div>
+        <label>Doğum Tarihi</label>
+        <input type="date" name="memberBirthDate" class="form-control" />
+    </div>
+    <div>
+        <label>Cinsiyet</label>
+        <input type="radio" name="E" value="Erkek" class="radio" />
+        <input type="radio" name="K" value="Kadın " class="radio" />
+    </div>
+</form>
+
