@@ -159,7 +159,6 @@ D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\bin\System.Web.WebPages.R
 D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\bin\Newtonsoft.Json.xml
 D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\bin\Antlr3.Runtime.pdb
 D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\obj\Debug\Gym_MVC.csproj.AssemblyReference.cache
 D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\obj\Debug\Gym_MVC.csproj.CoreCompileInputs.cache
 D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\obj\Debug\Gym_MVC.csproj.CopyComplete
 D:\work area\My Repository\Gym_MVC\SchoolManagment_MVC\obj\Debug\Gym_MVC.dll
