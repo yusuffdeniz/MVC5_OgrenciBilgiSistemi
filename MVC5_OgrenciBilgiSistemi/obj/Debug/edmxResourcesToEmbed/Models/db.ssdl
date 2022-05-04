@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCHOOLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="lessonID" />
+    </Key>
+    <Property Name="lessonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lessonName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LessonGrade">
+    <Key>
+      <PropertyRef Name="gradeID" />
+    </Key>
+    <Property Name="gradeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentID" Type="int" />
+    <Property Name="lessonID" Type="int" />
+    <Property Name="visa" Type="tinyint" />
+    <Property Name="final" Type="tinyint" />
+    <Property Name="quiz" Type="tinyint" />
+    <Property Name="avrg" Type="float" />
+    <Property Name="stat" Type="bit" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="studentSurname" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="studentTC" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="studentBirthDate" Type="date" />
+    <Property Name="studentMail" Type="varchar" MaxLength="75" />
+    <Property Name="studentPhoto" Type="varchar" MaxLength="500" />
+    <Property Name="studentSex" Type="bit" />
+  </EntityType>
+  <Association Name="FK__LessonGra__lesso__3B75D760">
+    <End Role="Lesson" Type="Self.Lesson" Multiplicity="0..1" />
+    <End Role="LessonGrade" Type="Self.LessonGrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="lessonID" />
+      </Principal>
+      <Dependent Role="LessonGrade">
+        <PropertyRef Name="lessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LessonGra__stude__3A81B327">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="LessonGrade" Type="Self.LessonGrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="LessonGrade">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SCHOOLModelStoreContainer">
+    <EntitySet Name="Lesson" EntityType="Self.Lesson" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LessonGrade" EntityType="Self.LessonGrade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__LessonGra__lesso__3B75D760" Association="Self.FK__LessonGra__lesso__3B75D760">
+      <End Role="Lesson" EntitySet="Lesson" />
+      <End Role="LessonGrade" EntitySet="LessonGrade" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LessonGra__stude__3A81B327" Association="Self.FK__LessonGra__stude__3A81B327">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="LessonGrade" EntitySet="LessonGrade" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

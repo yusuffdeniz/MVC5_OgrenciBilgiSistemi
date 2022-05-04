@@ -1,0 +1,78 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Our Custom CSS -->
+    <link href="~/Content/layout.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>MVC5 Öğrenci Bilgi Sistemi</h3>
+                <strong>OBS</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="/">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Ana Sayfa
+                    </a>
+                </li>
+                <li>
+
+                    <a href="/Student/List">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Öğrenci İşlemleri
+                    </a>
+                    <a href="/Lesson/List">
+                        <i class="glyphicon glyphicon-tasks"></i>
+                        Ders İşlemleri
+                    </a>
+                    <a href="/Personel/Liste">
+                        <i class="glyphicon glyphicon-tasks"></i>
+                        Not İşlemleri
+                    </a>
+                </li>
+               
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

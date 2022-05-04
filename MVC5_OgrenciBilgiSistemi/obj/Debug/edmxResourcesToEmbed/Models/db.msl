@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SCHOOLModelStoreContainer" CdmEntityContainer="SCHOOLEntities1">
+    <EntitySetMapping Name="Lessons">
+      <EntityTypeMapping TypeName="SCHOOLModel.Lesson">
+        <MappingFragment StoreEntitySet="Lesson">
+          <ScalarProperty Name="lessonID" ColumnName="lessonID" />
+          <ScalarProperty Name="lessonName" ColumnName="lessonName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LessonGrades">
+      <EntityTypeMapping TypeName="SCHOOLModel.LessonGrade">
+        <MappingFragment StoreEntitySet="LessonGrade">
+          <ScalarProperty Name="gradeID" ColumnName="gradeID" />
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="lessonID" ColumnName="lessonID" />
+          <ScalarProperty Name="visa" ColumnName="visa" />
+          <ScalarProperty Name="final" ColumnName="final" />
+          <ScalarProperty Name="quiz" ColumnName="quiz" />
+          <ScalarProperty Name="avrg" ColumnName="avrg" />
+          <ScalarProperty Name="stat" ColumnName="stat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="SCHOOLModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="studentSex" ColumnName="studentSex" />
+          <ScalarProperty Name="studentPhoto" ColumnName="studentPhoto" />
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="studentName" ColumnName="studentName" />
+          <ScalarProperty Name="studentSurname" ColumnName="studentSurname" />
+          <ScalarProperty Name="studentTC" ColumnName="studentTC" />
+          <ScalarProperty Name="studentBirthDate" ColumnName="studentBirthDate" />
+          <ScalarProperty Name="studentMail" ColumnName="studentMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

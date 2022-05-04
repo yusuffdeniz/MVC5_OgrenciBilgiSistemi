@@ -1,0 +1,60 @@
+﻿ @using MVC5_OgrenciBilgiSistemi.Models
+@model List<Student>
+@{
+    ViewBag.Title = "Öğrenci Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğrenci Listesi</h2>
+<div class="alert alert-info" role="alert">
+    Sistemde Kayıtlı Olan Tüm Öğrencileri Aşağıda Görüntüleyebilirsiniz.
+</div>
+<hr />
+
+<a href="/Student/Add" class="btn btn-primary">Yeni Öğrenci Kayıt</a>
+<a href="/Uye/Düzenle" class="btn btn-warning">Öğrenci Düzenle</a>
+<a href="/Uye/Sil" class="btn btn-danger">Öğrenci Sil</a>
+<hr />
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Öğrenci Resmi</td>
+            <td>Öğrenci No</td>
+            <td>Öğrencinin Adı</td>
+            <td>Öğrencinin Soyadı</td>
+            <td>Öğrenci TC</td>
+            <td>Öğrenci Doğum Tarihi</td>
+            <td>Öğrenci Mail</td>
+            <td>Cinsiyet</td>
+        </tr>
+    </thead>
+    <tbody>
+         @{ 
+             foreach(var ogr in Model)
+             {
+                 string cinsiyet = "";
+                 if (ogr.studentSex == true)
+                 {
+                     cinsiyet = "Erkek";
+
+                 }
+                 else
+                 {
+                     cinsiyet = "Kadın";
+                 }
+                 <tr>
+                    <td><img src="@ogr.studentPhoto" alt="Alternate Text" class="img-circle" style="width:60px;height:60px" /></td>
+                     <td>@ogr.studentID</td>
+                     <td>@ogr.studentName</td>
+                     <td>@ogr.studentSurname</td>
+                     <td>@ogr.studentTC</td>
+                     <td>@ogr.studentBirthDate.Value.ToShortDateString()</td>
+                     <td>@ogr.studentMail</td>
+                     <td>@cinsiyet</td>
+
+                 </tr>
+            }
+         }
+    </tbody>
+  
+</table>

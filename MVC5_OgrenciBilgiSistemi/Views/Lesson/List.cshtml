@@ -1,0 +1,36 @@
+﻿@using Gym_MVC.Models
+@model List<Lesson>
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lessons</h2>
+<a href="/Lesson/Add" class="btn btn-primary" >Yeni Ders Ekle</a>
+<a href="#" class="btn btn-warning">Ders Düzenle</a>
+<a href="#" class="btn btn-danger">Ders Sil</a>
+<hr />
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <td>Ders ID</td>
+            <td>Ders Adı</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var lesson in Model)
+            {
+                <tr>
+                    <td>
+                        @lesson.lessonID
+                    </td>
+                    <td>@lesson.lessonName</td>
+                </tr>
+
+            }
+
+
+        }
+    </tbody>
+</table>
