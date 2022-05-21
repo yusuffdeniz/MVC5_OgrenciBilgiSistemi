@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Üye Ekle</h2>
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Fotoğrafı Linki</label>
+        <input type="text" name="studentPhoto" class="form-control" />
+    </div>
+    <div>
+        <label>Öğrenci Ad</label>
+        <input type="text" name="studentName" class="form-control" />
+    </div>
+    <div>
+        <label>Öğrenci Soyadı</label>
+        <input type="text" name="studentSurname" class="form-control" />
+    </div>
+    <div>
+        <label>Tc Kimlik No</label>
+        <input type="number" name="studentTC" class="form-control" />
+    </div>
+    <div>
+        <label>Doğum Tarihi</label>
+        <input type="date" name="studentBirthDate" class="form-control" />
+    </div>
+    <div>
+        <label>E Posta</label>
+        <input type="email" name="studentMail" class="form-control" />
+
+    </div>
+    <div>
+        <label>Cinsiyet</label>
+        @Html.DropDownList("studentSex",
+       new[]
+       {
+           new SelectListItem() {Value="1",Text="Erkek"},
+           new SelectListItem() {Value="0",Text="Kadın"}
+       }
+       ,"Cibsiyet Seçin.."
+       , new {@class="form-control"}
+       )
+    </div>
+    <hr />
+    <button class="btn btn-info"> Öğrenci Kaydet</button>
+</form>
+
